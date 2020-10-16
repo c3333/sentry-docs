@@ -24,12 +24,16 @@ export const getApiTypeDefs = () => {
         warning: String
       }
       
-      type openApiPathDescription implements Node @childOf(types: ["openAPI"], mimeTypes: ["text/markdown"]) {
+      type openApiPathDescription implements Node @childOf(types: ["openAPI"], ) {
         id: ID!
       }
       
-      type openApiPathParameter implements Node @childOf(types: ["openAPI"], mimeTypes: ["text/markdown"], many: true) {
+      type openApiPathParameter implements Node @childOf(types: ["openAPI"], many: true) {
         id: ID!
+      }
+      
+      type Mdx implements Node @childOf(types: ["openApiPathDescription", "openApiPathParameter"], mimeTypes: ["text/markdown"]) {
+        body: String
       }
       `,
   ];
