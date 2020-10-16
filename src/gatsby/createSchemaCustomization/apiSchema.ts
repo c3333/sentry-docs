@@ -28,7 +28,7 @@ export const getApiTypeDefs = () => {
         id: ID!
       }
       
-      type Mdx implements Node @childOf(types: ["openApiPathParameter"], mimeTypes: ["text/markdown", many: true) {
+      type Mdx implements Node @childOf(types: ["openApiPathParameter"], mimeTypes: ["text/markdown"], many: true) {
         id: ID!
       }
       `,
