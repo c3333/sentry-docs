@@ -23,6 +23,14 @@ export const getApiTypeDefs = () => {
         query_parameters: [ApiParam]
         warning: String
       }
+      
+      type Mdx implements Node @childOf(types: ["openApiPathDescription"], mimeTypes: ["text/markdown"]) {
+        id: ID!
+      }
+      
+      type Mdx implements Node @childOf(types: ["openApiPathParameter"], mimeTypes: ["text/markdown", many: true) {
+        id: ID!
+      }
       `,
   ];
 };
